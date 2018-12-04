@@ -48,10 +48,27 @@ public class Rebaser {
 	 */
 	public String convertToBaseN(int base) {
 		//Check if the stored value is legal. 
-		if (ifLegal(STORED_BASE)) {
+		if (!ifLegal(STORED_BASE)) {
 			return "Error";
 		}
-		return "dummy";
+		
+		//Makes the stored number an int so that it is easier to do operations. 
+		int numInt = Integer.parseInt(numStr);
+		int remainder = 0; 
+		String rst = "";
+		
+		while (numInt != 0) {
+			remainder = numInt % base; 
+			//Add remainder to converted number
+			if (remainder < 10) {
+				rst = rst + remainder; 
+			}else {
+				rst = rst + (remainder + 55);
+			}
+			numInt = numInt / base; 
+		}
+		
+		return rst;
 		
 		
 	}
@@ -61,22 +78,21 @@ public class Rebaser {
 	}
 	
 	/**
-	 * Private Implimentation that checks whether the stored
+	 * Private Implementation that checks whether the stored
 	 * number is legal as an input. 
 	 * @param base base which the number is of. 
 	 * @return true or false depending on whether it is a 
 	 * 		   legal number or not. 
 	 */
 	private boolean ifLegal(int base) {
-		//TODO: Currently not working. Returns true when not 
-		// supposed to. 
+		
 		boolean rst = true; 
 		
 		for (char i: numCharArr) {
-			
+			System.out.println(i);
 			//If there is a letter and the base is less than
 			// 11, automatically fail. 
-			if(Character.isLetter(i) && base <= 10) {
+			if(Character.isAlphabetic(i) && base <= 10) {
 				rst = false; 
 				break; 
 			}
@@ -93,7 +109,7 @@ public class Rebaser {
 					break; 
 				}
 				
-			}else if(Character.isLetter(i)) {
+			}else if(Character.isAlphabetic(i)) {
 				
 				//If the char is a letter, check to see if 
 				// it exceeds the maximum allowance of the 
