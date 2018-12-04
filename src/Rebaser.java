@@ -88,34 +88,33 @@ public class Rebaser {
 		
 		boolean rst = true; 
 		
-		for (char i: numCharArr) {
-			System.out.println(i);
+		for (int i = 0; i < numCharArr.length; i ++) {
 			//If there is a letter and the base is less than
 			// 11, automatically fail. 
-			if(Character.isAlphabetic(i) && base <= 10) {
+			if(Character.isAlphabetic(numCharArr[i]) && base <= 10) {
 				rst = false; 
 				break; 
 			}
 			
 			//Check to see if the current char is a number. 
-			if (Character.isDigit(i)) {
+			if (Character.isDigit(numCharArr[i])) {
 				
 				//If the char is a number, check to see if
 				// it is larger than base - 1. 
 				// If so set rst to false,
 				// end everything. 
-				if ((i - 30) > (base - 1)) {
+				if ((numCharArr[i] - 30) > (base - 1)) {
 					rst = false;
 					break; 
 				}
 				
-			}else if(Character.isAlphabetic(i)) {
+			}else if(Character.isAlphabetic(numCharArr[i])) {
 				
 				//If the char is a letter, check to see if 
 				// it exceeds the maximum allowance of the 
 				// base (base - 1 + 55 to ascii). 
 				// If so set rst to false, end everything. 
-				if (i > (base - 1 + 55)) {
+				if (numCharArr[i] > (base - 1 + 55)) {
 					rst = false;
 					break; 
 				}
