@@ -44,7 +44,12 @@ public class Rebaser {
 	public String convertToBaseN(int base) {
 		
 	}
-	
+	/**
+	 * Converts the stored value with given base into base 10.
+	 * Does not change the stored value.
+	 * @param base the given base of stored value.
+	 * @return stored value converted into base 10.
+	 */
 	public String convertToBaseTen(int base) {
 		
 	}
