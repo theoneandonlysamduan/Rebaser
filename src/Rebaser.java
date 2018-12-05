@@ -78,7 +78,40 @@ public class Rebaser {
 	 * @return stored number in the given base. 
 	 */
 	public String convertToBaseTen(int base) {
-		return "dummy";
+		
+		//Iterate the char array from left to right. 
+		int index  = 0; 
+		int degree = numStr.length() - 1; 
+		int rstInt = 0; 
+		String rstStr = "";
+		//TODO: currentDigit somehow some way increases in the cycle. Don't exactly know why. 
+		while (index < numCharArr.length) {
+			char currentChar = 0; 
+			currentChar = numCharArr[index];
+			int currentDigit = 0; 
+			currentDigit = 0; 
+			//If the current digit is a number
+			if (Character.isDigit(currentChar)) {
+				//The ascii of a digit is 48 larger than its own value. 
+				currentDigit = currentChar - 48; 
+			
+			//Else if the current digit is a letter
+			}else if (Character.isLetter(currentChar)) {
+				//The ascii of a letter is 55 larger than the number it represents. 
+				currentDigit = currentChar - 55; 
+			}
+			
+			//Put the value of the current digit into rstInt according to its degree. 
+			rstInt += currentDigit * Math.pow(base, degree); 
+			//Move down the char arr, change degree accordingly. 
+			index ++; 
+			degree --; 
+		}
+		
+		//Put the result int into a string. 
+		rstStr = Integer.toString(rstInt);
+		
+		return rstStr;
 	}
 	
 	/**

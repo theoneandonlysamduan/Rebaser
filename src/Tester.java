@@ -8,5 +8,11 @@ public class Tester {
 			String  foo = rebaser.convertToBaseN(2);
 			
 			System.out.println(foo);
+			
+			rebaser.setValue(foo);
+			
+			foo = rebaser.convertToBaseTen(2);
+			
+			System.out.println(foo);
 	}
 }
