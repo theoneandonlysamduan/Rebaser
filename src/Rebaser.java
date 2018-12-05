@@ -3,25 +3,17 @@
  */
 public class Rebaser {
 	String numStr; 
-<<<<<<< HEAD
 	char[] numCharArr;
 	
 	static final int STORED_BASE = 10; 
 	
-=======
-	
->>>>>>> 307d86dec8fdef1fd7332f48f56daf07cf64d78d
 	/**
 	 * Default Constructor. 
 	 * 
 	 */
 	public Rebaser() {
-<<<<<<< HEAD
 		numStr = "";
 		numCharArr = numStr.toCharArray();
-=======
-		
->>>>>>> 307d86dec8fdef1fd7332f48f56daf07cf64d78d
 	}
 	/**
 	 * Constructor. 
@@ -29,10 +21,7 @@ public class Rebaser {
 	 */
 	public Rebaser(String num) {
 		numStr = num; 
-<<<<<<< HEAD
 		numCharArr = numStr.toCharArray();
-=======
->>>>>>> 307d86dec8fdef1fd7332f48f56daf07cf64d78d
 	}
 	
 	/**
@@ -58,7 +47,6 @@ public class Rebaser {
 	 * @return stored value converted into desired base. 
 	 */
 	public String convertToBaseN(int base) {
-<<<<<<< HEAD
 		//Check if the stored value is legal. 
 		if (!ifLegal(STORED_BASE)) {
 			return "Error";
@@ -120,7 +108,6 @@ public class Rebaser {
 				// it is larger than base - 1. 
 				// If so set rst to false,
 				// end everything. 
-				int currentDigitInt = numCharArr[i] - 48; 
 				if ((numCharArr[i] - 48) > (base - 1)) {
 					rst = false;
 					break; 
@@ -141,12 +128,6 @@ public class Rebaser {
 		
 		//If the program ended no problem, rst is true by default. 
 		return rst; 
-=======
 		
-	}
-	
-	public String convertToBaseTen(int base) {
-		
->>>>>>> 307d86dec8fdef1fd7332f48f56daf07cf64d78d
 	}
 }
