@@ -61,18 +61,22 @@ public class Rebaser {
 			remainder = numInt % base; 
 			//Add remainder to converted number
 			if (remainder < 10) {
-				rst = rst + remainder; 
+				rst = remainder + rst; 
 			}else {
-				rst = rst + (remainder + 55);
+				rst = (remainder + 55) + rst;
 			}
 			numInt = numInt / base; 
 		}
 		
 		return rst;
-		
-		
 	}
 	
+	/**
+	 * Converts the stored number with given base into base 10. 
+	 * Does not change the stored value. 
+	 * @param base Desired base to convert from. 
+	 * @return stored number in the given base. 
+	 */
 	public String convertToBaseTen(int base) {
 		return "dummy";
 	}
@@ -99,11 +103,13 @@ public class Rebaser {
 			//Check to see if the current char is a number. 
 			if (Character.isDigit(numCharArr[i])) {
 				
+				//TODO: Error here. When i is char 1, program enters here. 
 				//If the char is a number, check to see if
 				// it is larger than base - 1. 
 				// If so set rst to false,
 				// end everything. 
-				if ((numCharArr[i] - 30) > (base - 1)) {
+				int currentDigitInt = numCharArr[i] - 48; 
+				if ((numCharArr[i] - 48) > (base - 1)) {
 					rst = false;
 					break; 
 				}
