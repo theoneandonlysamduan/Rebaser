@@ -3,7 +3,7 @@
  */
 public class Rebaser {
 	String numStr; 
-	String baseStr = "0123456789ABCDEF";
+	String baseStr = "0123456789ABCDEF"; // create a reference sequence of bases
 	/**
 	 * Default Constructor. 
 	 * 
@@ -42,7 +42,7 @@ public class Rebaser {
 	 * @return stored value converted into desired base. 
 	 */
 	public String convertToBaseN(int base) {
-		if(!ifLegal(base))
+		if(!ifLegal(10))
 		return "-1";
 
 		int numInt = Integer.parseInt(numStr);
@@ -54,11 +54,11 @@ public class Rebaser {
 			remainder = numInt % base ;
 			if (remainder < 10)
 			{
-				rst = rst + remainder; 
+				rst = remainder + rst; 
 			}
 			else
 			{
-				rst = rst + (remainder + 55);
+				rst = (char)(remainder + 55) + rst;
 			}
 			numInt = numInt / base;
 		}
@@ -79,7 +79,7 @@ public class Rebaser {
 	private boolean ifLegal(int base) {
 		for (int i = 0; i < numStr.length(); i++) {
 			if( base > 16 || baseStr.indexOf(numStr.charAt(i)) >=
-			base) 
+			base) // find the odds
 			{
 				return false;
 			}			

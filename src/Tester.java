@@ -27,6 +27,9 @@ public class Tester {
 
 		System.out.println(b.convertToBaseTen(3));
 		System.out.println("Expected: 1447");
+
+		System.out.println(b.convertToBaseN(12));
+		System.out.println(d.convertToBaseN(12));
 	}
 
 }
