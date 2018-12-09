@@ -42,7 +42,7 @@ public class Rebaser {
 	 * @return stored value converted into desired base. 
 	 */
 	public String convertToBaseN(int base) {
-		if(!ifLegal(10))
+		if (!ifLegal(10))
 		return "-1";
 
 		int numInt = Integer.parseInt(numStr);
@@ -72,9 +72,19 @@ public class Rebaser {
 	 * @return stored value converted into base 10.
 	 */
 	public String convertToBaseTen(int base) {
-		return "dummy";
-	}
+		if (!ifLegal(base))
+		return "-1";
 
+		int length = numStr.length();
+		int numInt = 0;
+		for (int i = 0; i < length; i++)
+		{
+			numInt += baseStr.indexOf(numStr.charAt(length - i - 1)) * Math.pow(base,i);
+			// the number of each digit times its weight in base 10
+		}
+		return "" + numInt;
+	}
+	
 	//an universal checking method without using array;
 	private boolean ifLegal(int base) {
 		for (int i = 0; i < numStr.length(); i++) {
