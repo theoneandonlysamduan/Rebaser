@@ -9,7 +9,7 @@ public class Rebaser {
 	 * 
 	 */
 	public Rebaser() {
-		
+		numStr = "";
 	}
 	/**
 	 * Constructor. 
@@ -42,7 +42,28 @@ public class Rebaser {
 	 * @return stored value converted into desired base. 
 	 */
 	public String convertToBaseN(int base) {
-		
+		if(!ifLegal(base))
+		return "-1";
+
+		int numInt = Integer.parseInt(numStr);
+		int remainder = 0;
+		String rst = "";
+
+		while (numInt != 0)
+		{
+			remainder = numInt % base ;
+			if (remainder < 10)
+			{
+				rst = rst + remainder; 
+			}
+			else
+			{
+				rst = rst + (remainder + 55);
+			}
+			numInt = numInt / base;
+		}
+		return rst;
+
 	}
 	/**
 	 * Converts the stored value with given base into base 10.
@@ -51,7 +72,7 @@ public class Rebaser {
 	 * @return stored value converted into base 10.
 	 */
 	public String convertToBaseTen(int base) {
-		
+		return "dummy";
 	}
 
 	//an universal checking method without using array;
