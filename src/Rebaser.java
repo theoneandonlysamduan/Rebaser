@@ -3,7 +3,7 @@
  */
 public class Rebaser {
 	String numStr; 
-	
+	String letterBase = "ABCDEF";
 	/**
 	 * Default Constructor. 
 	 * 
@@ -53,4 +53,22 @@ public class Rebaser {
 	public String convertToBaseTen(int base) {
 		
 	}
+
+	//an universal checking method without using array;
+	private boolean ifLegal(String base) {
+		for (int i = 0; i < numStr.length(); i ++) {
+			//If there is a letter and the base is less than
+			// 11, automatically fail. 
+			if(Character.isAlphabetic(numStr.charAt(i)) && 
+			(Character.isDigit(base.charAt(0)) || 
+			letterBase.indexOf(numStr.charAt(i)) >=
+			letterBase.indexOf(base))) 
+			{
+				return false;
+			}
+			
+			else 
+			return true;
+			}
+		}
 }
