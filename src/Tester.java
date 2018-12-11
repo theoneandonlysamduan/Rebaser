@@ -31,5 +31,4 @@ public class Tester {
 		System.out.println(b.convertToBaseN(12));
 		System.out.println(d.convertToBaseN(12));
 	}
-
 }

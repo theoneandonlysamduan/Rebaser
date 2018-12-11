@@ -4,6 +4,9 @@
 public class Rebaser {
 	String numStr; 
 	String baseStr = "0123456789ABCDEF"; // create a reference sequence of bases
+	
+	static final int STORED_BASE = 10; 
+	
 	/**
 	 * Default Constructor. 
 	 * 
@@ -42,7 +45,7 @@ public class Rebaser {
 	 * @return stored value converted into desired base. 
 	 */
 	public String convertToBaseN(int base) {
-		if (!ifLegal(10))
+		if (!ifLegal(STORED_BASE))
 		return "-1";
 
 		int numInt = Integer.parseInt(numStr);
@@ -52,7 +55,7 @@ public class Rebaser {
 		while (numInt != 0)
 		{
 			remainder = numInt % base ;
-			if (remainder < 10)
+			if (remainder < STORED_BASE)
 			{
 				rst = remainder + rst; 
 			}
