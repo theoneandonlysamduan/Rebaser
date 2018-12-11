@@ -9,7 +9,7 @@ public class Tester {
 		Rebaser c = new Rebaser("567475432745"); // initialize a base 8 number
 		Rebaser d = new Rebaser("1A9247A92497391"); // initialize a base 11 number
 		Rebaser e = new Rebaser("ABCDCDBAD");// initialize a base 14 number
-		Rebaser f = new Rebaser("")// initialize a base 16 number
+		Rebaser f = new Rebaser("");// initialize a base 16 number
 
 		f.getValue();
 		System.out.println("Expected: ABCDEABCDEFF");
