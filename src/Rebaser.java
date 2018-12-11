@@ -3,6 +3,7 @@
  */
 public class Rebaser {
 	String numStr; 
+	String numStrDummy; 
 	char[] numCharArr;
 	
 	static final int STORED_BASE = 10; 
@@ -21,6 +22,7 @@ public class Rebaser {
 	 */
 	public Rebaser(String num) {
 		numStr = num; 
+		numStr = numStr.toUpperCase();
 		numCharArr = numStr.toCharArray();
 	}
 	
