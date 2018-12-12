@@ -13,7 +13,7 @@ public class Rebaser {
 	 * 
 	 */
 	public Rebaser() {
-		numStr = "";
+		numStr = "0";
 	}
 	/**
 	 * Constructor. 

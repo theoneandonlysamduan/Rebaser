@@ -9,9 +9,12 @@ public class Tester {
 		Rebaser c = new Rebaser("567475432745"); // initialize a base 8 number
 		Rebaser d = new Rebaser("1A9247A92497391"); // initialize a base 11 number
 		Rebaser e = new Rebaser("ABCDCDBAD");// initialize a base 14 number
-		Rebaser f = new Rebaser("");// initialize a base 16 number
-
-		f.getValue();
+		Rebaser f = new Rebaser("ABCDEABCDEFF");// initialize a base 16 number
+		
+		System.out.println(a.getValue());
+		System.out.println("Expected: 0");
+		
+		System.out.println(f.getValue());
 		System.out.println("Expected: ABCDEABCDEFF");
 		System.out.println(f.convertToBaseTen(16));
 		System.out.println("Expected: 188900894891775");
